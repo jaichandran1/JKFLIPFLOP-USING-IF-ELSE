@@ -1,4 +1,4 @@
-# JKFLIPFLOP-USING-IF-ELSE
+<img width="901" height="286" alt="image" src="https://github.com/user-attachments/assets/08e0bcae-1d3e-432e-b4ac-19e69e9a5e0a" /># JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
@@ -34,15 +34,35 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+2.Compile and run the program.
+3.Generate the RTL schematic and save the logic diagram.
+4.Create nodes for inputs and outputs to generate the timing diagram.
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.Developed by: RegisterNumber: */
+module jkff(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial
+begin
+q=1'b0;
+q=1'b1;
+end
+always @(posedge clk)
+begin
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
 
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="878" height="304" alt="Screenshot 2025-10-16 121155" src="https://github.com/user-attachments/assets/590f0ad8-1d48-4b2b-9995-e5dc667e8574" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="901" height="286" alt="Screenshot 2025-10-16 121253" src="https://github.com/user-attachments/assets/64d76923-65d5-40e4-bd09-63cb0bfc17d2" />
 
 **RESULTS**
+Thus the Serial-in and Serial-out Register is designed and is verified usingQuartus software.
